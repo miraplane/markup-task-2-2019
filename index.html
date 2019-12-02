@@ -118,12 +118,18 @@
     <a href="#">
         <span class="close"></span>
     </a>
-    <svg class="modal_window_circle">
-        <circle tabindex="1" r="8" class="circle_original"></circle>
-        <circle r="8" class="circle_reverse"></circle>
-        <circle r="8" class="circle_wb"></circle>
-    </svg>
-    <img class="modal_window_img" src="goals/cat.png" alt="Манчкин длинношёрстная">
+    <div class="modal_window_changer">
+        <input type="radio" id="original" class="original" name="image" checked>
+        <label for="original" class="circle_original"></label>
+
+        <input type="radio" id="reverse" class="reverse" name="image">
+        <label for="reverse" class="circle_reverse"></label>
+
+        <input type="radio" id="wb" class="wb" name="image">
+        <label for="wb" class="circle_wb"></label>
+
+        <img class="modal_window_img" src="goals/cat.png" alt="Манчкин длинношёрстная">
+    </div>
     <div class="modal_window_name">Манчкин длинношёрстная</div>
     <div class="modal_window_info">
         <p>
