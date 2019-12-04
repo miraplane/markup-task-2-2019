@@ -1,8 +1,18 @@
-div
+div,
+header,
+footer,
+article
 {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+h1,
+h2
+{
+    margin: 0;
+    font-weight: normal;
 }
 
 body
@@ -37,30 +47,15 @@ body
 
 .button
 {
-    position: absolute;
-    top: 0;
-    z-index: 1;
-    opacity: 0;
-    left: 38px;
-    height: 40px;
-    width: 40px;
+    display: none;
 }
 
-.rotate_button
-{
-    position: relative;
-    margin-top: 120px;
-    margin-left: 38px;
-    height: 35px;
-    width: 40px;
-}
-
-.rotate_button:hover .rectangle
+.button:hover ~ .rectangle
 {
     border-color: #f41d1d;
 }
 
-.button:checked + .rotate_button
+.button:checked ~ .rotate_button > .two_rectangle
 {
     transform: rotate(90deg);
 }
@@ -89,21 +84,39 @@ body
     margin-left: 300px;
 }
 
+.rotate_button
+{
+    position: relative;
+    top: 120px;
+    left: 38px;
+    height: 40px;
+    width: 40px;
+}
+
+.two_rectangle
+{
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+
 .rectangle
 {
     position: relative;
-    margin: 5px;
-    width: 30px;
-    height: 10px;
-    border: 2px solid #1da7f4;
+    display: inline-block;
+    margin: 10px;
+    fill: #fff;
+    stroke: #1da7f4;
+    stroke-width: 2px;
 }
 
 .content
 {
     position: relative;
-    margin-top: 24px;
+    margin-top: 130px;
     margin-left: 38px;
-    min-height: calc(100vh - 144px - 35px - 100px);
+    display: block;
+    min-height: calc(100vh - 130px - 40px - 100px);
 }
 
 .card
@@ -134,30 +147,27 @@ body
     border-radius: 10px;
 }
 
-.card_name
+.card_content
 {
     position: absolute;
-    margin-top: 200px;
     padding-top: 18px;
     padding-left: 18px;
 
     font-family: Roboto;
-    font-size: 18px;
     line-height: 21px;
     color: #000;
 }
 
+.card_name
+{
+    margin-top: 200px;
+    font-size: 18px;
+}
+
 .card_info
 {
-    position: absolute;
     margin-top: 240px;
-    padding-top: 18px;
-    padding-left: 18px;
-
-    font-family: Roboto;
     font-size: 14px;
-    line-height: 21px;
-    color: #000;
 }
 
 .basement
@@ -198,7 +208,7 @@ a:hover
 
 .modal_window
 {
-    position: absolute;
+    position: fixed;
     padding: 21px;
     top: 0;
     right: 0;
@@ -231,11 +241,11 @@ a:hover
 .close:after
 {
     position: absolute;
+    content: '';
     left: 15px;
-    content: ' ';
     height: 15px;
     width: 2px;
-    background-color: #333;
+    background-color: #000;
 }
 
 .close:before
@@ -281,45 +291,27 @@ a:hover
 {
     position: relative;
     top: 0;
-    left: -100px;
+    left: -60px;
     width: 500px;
     height: 400px;
 }
 
-.circle_original
+.modal_window_changer > .original,
+.modal_window_changer > .reverse,
+.modal_window_changer > .wb
 {
-    position: relative;
-    top: 30px;
-    left: 170px;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    display: inline-block;
-    background: #1da7f4;
+    display: none;
 }
 
-.circle_reverse
+.circle
 {
     position: relative;
     top: 30px;
-    left: 170px;
+    left: 210px;
     width: 16px;
     height: 16px;
     border-radius: 50%;
     display: inline-block;
-    background: #c4c4c4;
-}
-
-.circle_wb
-{
-    position: relative;
-    top: 30px;
-    left: 170px;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    display: inline-block;
-    background: #c4c4c4;
 }
 
 input[type='radio']
