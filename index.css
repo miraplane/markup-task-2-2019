@@ -1,0 +1,344 @@
+div,
+header,
+footer,
+article
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1,
+h2
+{
+    margin: 0;
+    font-weight: normal;
+}
+
+body
+{
+    margin: 0;
+    position: relative;
+    background: #fff;
+}
+
+.header
+{
+    position: fixed;
+    padding-top: 29px;
+    padding-left: 38px;
+    z-index: 4000;
+    height: 100px;
+    width: 100%;
+    left: 0;
+    top: 0;
+
+    border-bottom: 2px solid #e6e6e6;
+    background: #fff;
+}
+
+.header_text
+{
+    font-family: Roboto;
+    font-size: 36px;
+    line-height: 42px;
+    color: #000;
+}
+
+.button
+{
+    display: none;
+}
+
+.button:hover ~ .rectangle
+{
+    border-color: #f41d1d;
+}
+
+.button:checked ~ .rotate_button > .two_rectangle
+{
+    transform: rotate(90deg);
+}
+
+.button:checked ~ .content > .card
+{
+    display: block;
+    width: 600px;
+    height: 200px;
+}
+
+.button:checked ~ .content > .card > .card_img
+{
+    border-radius: 10px 0 0 10px;
+}
+
+.button:checked ~ .content > .card > .card_name
+{
+    margin-top: 0;
+    margin-left: 300px;
+}
+
+.button:checked ~ .content > .card > .card_info
+{
+    margin-top: 40px;
+    margin-left: 300px;
+}
+
+.rotate_button
+{
+    position: relative;
+    top: 120px;
+    left: 38px;
+    height: 40px;
+    width: 40px;
+}
+
+.two_rectangle
+{
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+
+.rectangle
+{
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+    fill: #fff;
+    stroke: #1da7f4;
+    stroke-width: 2px;
+}
+
+.content
+{
+    position: relative;
+    margin-top: 130px;
+    margin-left: 38px;
+    display: block;
+    min-height: calc(100vh - 130px - 40px - 100px);
+}
+
+.card
+{
+    position: relative;
+    display: inline-block;
+    width: 300px;
+    height: 400px;
+    margin: 0 28px 28px 0;
+
+    background: #fff;
+    border: 4px solid #e6e6e6;
+    border-radius: 10px;
+}
+
+.card:hover > a > .card_img
+{
+    opacity: .4;
+}
+
+.card_img
+{
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    height: 200px;
+    width: 300px;
+    border-radius: 10px;
+}
+
+.card_content
+{
+    position: absolute;
+    padding-top: 18px;
+    padding-left: 18px;
+
+    font-family: Roboto;
+    line-height: 21px;
+    color: #000;
+}
+
+.card_name
+{
+    margin-top: 200px;
+    font-size: 18px;
+}
+
+.card_info
+{
+    margin-top: 240px;
+    font-size: 14px;
+}
+
+.basement
+{
+    padding: 25px 30px;
+    width: 100%;
+    height: 100px;
+
+    border-top: 2px solid #e6e6e6;
+}
+
+a:hover
+{
+    color: #f41d1d;
+}
+
+.basement_href
+{
+    margin-right: 14px;
+    display: inline-block;
+    font-family: Roboto;
+    font-size: 14px;
+    line-height: 150%;
+
+    color: #1da7f4;
+    text-decoration-line: underline;
+}
+
+.basement_name
+{
+    position: absolute;
+    right: 30px;
+    display: inline-block;
+    font-family: Roboto;
+    font-size: 14px;
+    line-height: 150%;
+}
+
+.modal_window
+{
+    position: fixed;
+    padding: 21px;
+    z-index: 8000;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+
+    width: 828px;
+    height: 508px;
+    background: #fff;
+    border: 2px solid #e6e6e6;
+    display: none;
+}
+
+.modal_window:target
+{
+    display: block;
+}
+
+.close
+{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 32px;
+    height: 32px;
+}
+
+.close:before,
+.close:after
+{
+    position: absolute;
+    content: '';
+    left: 15px;
+    height: 15px;
+    width: 2px;
+    background-color: #000;
+}
+
+.close:before
+{
+    transform: rotate(45deg);
+}
+
+.close:after
+{
+    transform: rotate(-45deg);
+}
+
+.modal_window_name
+{
+    position: absolute;
+    margin-top: 5px;
+    margin-left: 527px;
+
+    font-family: Roboto;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000;
+}
+
+.modal_window_info
+{
+    position: absolute;
+    margin-top: 30px;
+    margin-left: 527px;
+
+    font-family: Roboto;
+    font-size: 14px;
+    line-height: 21px;
+    color: #000;
+}
+
+.modal_window_changer
+{
+    position: absolute;
+}
+
+.modal_window_img
+{
+    position: relative;
+    top: 0;
+    left: -60px;
+    width: 500px;
+    height: 400px;
+}
+
+.modal_window_changer > .original,
+.modal_window_changer > .reverse,
+.modal_window_changer > .wb
+{
+    display: none;
+}
+
+.circle
+{
+    position: relative;
+    top: 30px;
+    left: 210px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+input[type='radio']
+{
+    opacity: 0;
+    display: inline-block;
+    margin: 0;
+}
+
+input[type='radio'] + label
+{
+    background: #c4c4c4;
+}
+
+input[type='radio']:checked + label
+{
+    background: #1da7f4;
+}
+
+.reverse:checked ~ img
+{
+    transform: scaleX(-1);
+}
+
+.wb:checked ~ img
+{
+    transform: scaleX(-1);
+    filter: grayscale(100%);
+}
